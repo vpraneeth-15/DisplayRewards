@@ -9,7 +9,7 @@ class RewardsMapper @Inject constructor() {
         return client
             .filter { !it.name.isNullOrBlank() }
             .sortedWith(compareBy({ it.listId }, { it.name }))
-            .map { Reward(it.id, it.listId, it.name) }
+            .map { Reward(it.id, it.listId, it?.name ?: "") }
             .groupBy { it.listId }
     }
 }

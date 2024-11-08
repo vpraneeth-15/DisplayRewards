@@ -29,7 +29,7 @@ class RewardsViewModelTest {
     @Before
     fun setup() {
         Dispatchers.setMain(testDispatcher)
-        val response = listOf<Reward>(Reward(id = 684, listId = 1, name = "Item 684"))
+        val response = mapOf<Int, List<Reward>>(1 to listOf(Reward(id = 684, listId = 1, name = "Item 684")))
         coEvery { repository.fetchRewards() } returns ApiResult.Success(response)
         viewModel = RewardsViewModel(repository)
     }
