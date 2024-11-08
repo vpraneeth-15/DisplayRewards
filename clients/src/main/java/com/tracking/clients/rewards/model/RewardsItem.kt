@@ -6,5 +6,5 @@ import com.squareup.moshi.JsonClass
 data class RewardsItem(
     val id: Int,
     val listId: Int,
-    val name: String,
+    val name: String?,
 )
